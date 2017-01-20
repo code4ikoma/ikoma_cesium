@@ -1,0 +1,40 @@
+/// kml
+viewer.dataSources.add(Cesium.KmlDataSource.load('.kml'));
+
+
+///指定した座標から表示させる
+viewer.camera.flyTo({   
+     destination : Cesium.Cartesian3.fromDegrees(135.698525,34.6918934,8000.0)});
+
+
+///ポイント
+viewer.entities.add({
+   position : Cesium.Cartesian3.fromDegrees(133.871398925781,-23.7925338745117),
+	point : {
+            pixelSize : 10,
+            color : Cesium.Color.YELLOW
+    }
+///画像を表示させるのはこっち
+///       description : "",
+///           billboard : {
+///               image:'0501/P5010122.JPG',
+///               scale : 0.08
+///               }
+
+           });
+
+
+///ライン
+
+var line = viewer.entities;
+line0501.add({
+     polyline : {
+         positions : Cesium.Cartesian3.fromDegreesArrayHeights([
+ 133.871398925781 ,-23.7925338745117 , 483 ,
+ 133.871047973633 ,-23.7925643920898 , 527 ,
+ 151.165451049805 ,-33.9359321594238 , 151 
+]),
+         width : 5,
+         material : new Cesium.PolylineArrowMaterialProperty(Cesium.Color.RED)
+     }});
+
